@@ -1,1 +1,262 @@
+:root {
+  --primary: #1f6feb;
+  --primary-dark: #174ea6;
+  --accent: #eaf3ff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --border: #dfe7f1;
+  --success: #1e9a5d;
+  --error: #c62828;
+  --shadow: 0 8px 24px rgba(31, 111, 235, 0.10);
+}
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: var(--accent);
+  color: var(--primary-dark);
+}
+
+.hero {
+  background: linear-gradient(135deg, #f3f8ff 0%, #eaf3ff 100%);
+  padding: 70px 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 3vw, 3.3rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.lead {
+  font-size: 1.08rem;
+  color: var(--muted);
+  max-width: 620px;
+  margin-bottom: 20px;
+}
+
+.hero-card,
+.card,
+.about-box,
+.info-box,
+.contact-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 24px 20px;
+}
+
+.hero-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text);
+}
+
+.section {
+  padding: 56px 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.card {
+  padding: 24px 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button.primary:hover {
+  background: var(--primary-dark);
+}
+
+.about-box,
+.info-box {
+  padding: 22px 20px;
+  margin-top: 24px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.contact-form {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(31, 111, 235, 0.2);
+  border-color: var(--primary);
+}
+
+.form-message {
+  min-height: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.form-message.success {
+  color: var(--success);
+}
+
+.form-message.error {
+  color: var(--error);
+}
+
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .hero-content,
+  .card-grid,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+}
